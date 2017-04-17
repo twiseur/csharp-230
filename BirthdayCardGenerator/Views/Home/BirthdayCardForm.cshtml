@@ -25,9 +25,11 @@
 
 @using (Html.BeginForm())
 {
-    @Html.ValidationSummary()
 
     <h1>Send a Birthday Card</h1>
+
+    @Html.ValidationSummary()
+
     <p>
         <label style="padding:5px">From: </label>@Html.TextBoxFor(t => t.From)
     </p>
