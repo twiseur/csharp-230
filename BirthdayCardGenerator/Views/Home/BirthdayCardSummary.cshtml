@@ -1,0 +1,27 @@
+﻿@model BirthdayCardGenerator.Models.BirthdayCard
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<style>
+    .btn a {
+        color: white;
+    }
+
+    body {
+        background-color: #f1f1f1;
+    }
+</style>
+
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Birthday Card Summary</title>
+</head>
+
+@using (Html.BeginForm())
+{
+    <h1>Birthday Card Sent</h1>
+    <p>From: @Model.From</p>
+    <p>To: @Model.To</p>
+    <p>Message: @Model.Message</p>
+}
