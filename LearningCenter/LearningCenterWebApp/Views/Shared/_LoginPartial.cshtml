@@ -10,8 +10,16 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-                @Html.ActionLink("Hello " + user.UserEmail + "!", "Index", "Manage", routeValues: null,
-                                htmlAttributes: new { title = "Manage" })
+                @Html.ActionLink("Hello " + user.UserEmail + "!", "Index", "Home", routeValues: null,
+                                htmlAttributes: new { title = "Home" })
+            </li>
+            <li>
+                @Html.ActionLink("My Classes", "StudentClasses", "Home", routeValues: null,
+                                htmlAttributes: new { title = "StudentClasses" })
+            </li>
+            <li>
+                @Html.ActionLink("Enroll in class", "EnrollInClass", "Home", routeValues: null,
+                                htmlAttributes: new { title = "EnrollInClass" })
             </li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>
@@ -25,8 +33,6 @@ else
                                         htmlAttributes: new { id = "registerLink" })
     </li>
     <li>
-        @*@Html.ActionLink("Log in", "LogIn", "Home", routeValues: null,
-                                        htmlAttributes: new { id = "loginLink" })*@
         @Html.ActionLink("Log in", "LogIn", "Home", new { ReturnUrl = Request.RawUrl }, null)
 </li>
 </ul>
