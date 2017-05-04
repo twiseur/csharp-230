@@ -5,7 +5,7 @@
 }
 
 <form action="/Home/EnrollInClass" method="post">
-    <h2>ViewBag.Title</h2>
+    <h2>@ViewBag.Title</h2>
     @if (Model.AvailableClasses.Count == 0)
     {
         <p>You are already enrolled in all our classes.</p>
