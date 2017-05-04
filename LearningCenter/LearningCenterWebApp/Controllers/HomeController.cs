@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using LearningCenterBusiness;
-using LearningCenterWebApp.Repositories;
 using LearningCenterWebApp.Models;
 using System.Web.Security;
 
@@ -103,7 +100,7 @@ namespace LearningCenterWebApp.Controllers
 
                     System.Web.Security.FormsAuthentication.SetAuthCookie(registerModel.UserEmail, false);
 
-                    return Redirect(returnUrl);
+                    return Redirect(returnUrl ?? "~/");
                 }
             }
 
@@ -135,7 +132,7 @@ namespace LearningCenterWebApp.Controllers
 
                     FormsAuthentication.SetAuthCookie(loginModel.UserEmail, false);
 
-                    return Redirect(returnUrl);
+                    return Redirect(returnUrl ?? "~/");
                 }
             }
 
