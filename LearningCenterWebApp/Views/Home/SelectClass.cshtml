@@ -1,0 +1,8 @@
+﻿@model IEnumerable<LearningCenterWebApp.Models.Class>
+
+<select>
+    @foreach (var Class in Model)
+    {
+        <option value=@Class.ClassName>@Class.ClassName</option>
+    }
+</select>

@@ -1,0 +1,31 @@
+﻿@model List<LearningCenterBusiness.ClassModel>
+
+@{
+    ViewBag.Title = "My Classes";
+}
+
+<h2>ViewBag.Title</h2>
+
+@if (Model.Count() > 0)
+{
+    <table style="width:80%" border=0 frame=void rules=rows bordercolor="#CCCCCC">
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Description</b></td>
+            <td><b>Paid</b></td>
+        </tr>
+        @foreach (var Class in Model)
+        {
+            <tr>
+                <td>@Class.ClassName</td>
+                <td>@Class.ClassDescription</td>
+                <td>@String.Format("{0:C}", Class.ClassPrice)</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>You are not enrolled in any class at the moment.</p>
+}
+

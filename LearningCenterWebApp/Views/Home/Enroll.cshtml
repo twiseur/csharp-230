@@ -1,7 +1,19 @@
-﻿
+﻿@model LearningCenterWebApp.Models.AddClassResponse
+
 @{
     ViewBag.Title = "Enroll";
 }
 
-<h2>Enroll</h2>
-
+<form action="/Home/Enroll" method="post">
+    <h2>Enroll in class</h2>
+    <p>
+        @Html.DropDownListFor(t => t.ClassAdded, new[]
+      {
+        new SelectListItem { Text="CSHP", Value="CSHP"},
+        new SelectListItem{Text="PSYCHO", Value="PSYCHO"},
+        new SelectListItem{Text="MATH", Value="MATH"},
+        new SelectListItem{Text="FLMC 330", Value="FLMC 330"}
+      })
+    </p>
+    <input type="submit" value="Add Class" />
+</form>
